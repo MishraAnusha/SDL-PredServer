@@ -1,0 +1,7 @@
+python3 app.py 
+url:8080
+
+
+
+python3 -m venv sdlpredenv
+ubuntu@ip-172-31-7-90:~$ source sdlpredenv/bin/activate
