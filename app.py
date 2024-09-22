@@ -4,6 +4,7 @@ import pickle
 from PIL import Image
 import io
 from keras.models import load_model
+import keras
 
 app = Flask(__name__)
 
