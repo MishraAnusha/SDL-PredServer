@@ -12,7 +12,7 @@ app = Flask(__name__)
 #model = pickle.load(open("model.pkl", "rb"))
 
 #model = load_model("model.pkl")
-model = keras.layers.TFSMLayer(model.pkl, call_endpoint='serving_default')
+model = keras.layers.TFSMLayer("model.pkl", call_endpoint='serving_default')
 
 @app.route('/')
 def index():
