@@ -7,7 +7,11 @@ import io
 app = Flask(__name__)
 
 # Load the model
-model = pickle.load(open("model.pkl", "rb"))
+#model = pickle.load(open("model.pkl", "rb"))
+
+from keras.models import load_model
+
+model = load_model("model.pkl")
 
 @app.route('/')
 def index():
