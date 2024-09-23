@@ -59,7 +59,8 @@ def submit_form():
                 image = Image.open(io.BytesIO(image_file.read()))
                 image = image.convert('RGB')  # Ensure image is in RGB format
                 # Resize the image to the model's expected input size (2048, 1024)
-                image = image.resize((2048, 1024))  # (width, height) as per the model requirement
+                #image = image.resize((2048, 1024))  # (width, height) as per the model requirement
+                image = image.resize((64, 64))
                 image = np.array(image) / 255.0   # Normalize to [0, 1] range
                 image = np.expand_dims(image, axis=0)  # Add batch dimension (1, 1024, 2048, 3)
                 print("Image input shape:", image.shape)
