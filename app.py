@@ -76,6 +76,7 @@ def submit_form():
             # Only numerical data is provided
             # Use a placeholder for image input
             placeholder_image = np.zeros((1, 1024, 2048, 3))  # Placeholder for image input
+             placeholder_image = np.zeros((1, 64, 64, 3))  # Placeholder for image input
             result = model.predict([numeric_inputs, placeholder_image])
         elif image is not None:
             # Only image data is provided
