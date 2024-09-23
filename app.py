@@ -3,11 +3,18 @@ import numpy as np
 import pickle
 from PIL import Image
 import io
+from keras.models import load_model
+#import keras
+import joblib
 
 app = Flask(__name__)
 
 # Load the model
-model = pickle.load(open("model.pkl", "rb"))
+model = joblib.load("model.pkl")
+#model = pickle.load(open("model.pkl", "rb"))
+
+#model = load_model("model.pkl")
+#model = keras.layers.TFSMLayer("model.pkl", call_endpoint='serving_default')
 
 @app.route('/')
 def index():
