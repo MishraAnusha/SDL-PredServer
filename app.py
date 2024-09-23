@@ -5,12 +5,15 @@ from PIL import Image
 import io
 from keras.models import load_model
 #import keras
-import joblib
+#import joblib
 
 app = Flask(__name__)
 
 # Load the model
-model = joblib.load("model.pkl")
+
+
+model = load_model('model.h5')
+#model = joblib.load("model.pkl")
 #model = pickle.load(open("model.pkl", "rb"))
 
 #model = load_model("model.pkl")
