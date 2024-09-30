@@ -60,7 +60,7 @@ def submit_form():
                 image = image.convert('RGB')  # Ensure image is in RGB format
                 # Resize the image to the model's expected input size (2048, 1024)
                 #image = image.resize((2048, 1024))  # (width, height) as per the model requirement
-                image = image.resize((64, 64))
+                image = image.resize((1024, 461))
                 image = np.array(image) / 255.0   # Normalize to [0, 1] range
                 image = np.expand_dims(image, axis=0)  # Add batch dimension (1, 1024, 2048, 3)
                 print("Image input shape:", image.shape)
@@ -75,8 +75,8 @@ def submit_form():
         elif numeric_inputs is not None:
             # Only numerical data is provided
             # Use a placeholder for image input
-            placeholder_image = np.zeros((1, 1024, 2048, 3))  # Placeholder for image input
-             placeholder_image = np.zeros((1, 64, 64, 3))  # Placeholder for image input
+            #placeholder_image = np.zeros((1, 1024, 2048, 3))  # Placeholder for image input
+            placeholder_image = np.zeros((1, 461, 1024, 3))  # Placeholder for image input
             result = model.predict([numeric_inputs, placeholder_image])
         elif image is not None:
             # Only image data is provided
