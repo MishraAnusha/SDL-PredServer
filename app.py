@@ -97,7 +97,7 @@ def submit_form():
             fresult = 'Hence Unhealthy'
             prompt = "Summary: Leaf spot is a fungal disease causing dark, necrotic lesions on leaves."
             prompt2 = "Treatment: Remove and destroy infected leaves to prevent spread. Apply a fungicide specifically labeled for leaf spot control and ensure proper plant spacing for good air circulation."
-        elif result[0][1] >=  0.02:
+        elif result[0][1] >=  0.5:
             pred_result = 'Anthracnose Detected'
             fresult = 'Hence Unhealthy'
             prompt = "Summary: Anthracnose is a fungal disease that causes dark, sunken lesions on leaves, stems, flowers, and fruit."
